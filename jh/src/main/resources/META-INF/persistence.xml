@@ -6,6 +6,7 @@
     <persistence-unit name="trading-entities" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>com.madhusudhan.jh.jpa.Instrument</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.url"
                       value="jdbc:mysql://localhost:3306/JH"/>
