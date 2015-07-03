@@ -15,18 +15,27 @@ import javax.persistence.Persistence;
 public class JPATest {
 
     private EntityManagerFactory factory = null;
-    private EntityManager manager = null;
+    private EntityManager em = null;
+
     private void init() {
         factory = Persistence.createEntityManagerFactory("trading-entities");
-        manager = factory.createEntityManager();
-        System.out.println("Manager created: "+manager);
+        em = factory.createEntityManager();
+        System.out.println("Manager created: " + em);
     }
-    private void test(){
-        
+
+    private void persistNewInstrument() {
+
+        Instrument instrument = new Instrument();
+        instrument.setIssue("IBM");
+        em.getTransaction().begin();
+        em.persist(instrument);
+        em.getTransaction().commit();
     }
 
     public static void main(String[] args) {
+//        Persistence.generateSchema("samplePU", null);
         JPATest test = new JPATest();
         test.init();
+        test.persistNewInstrument();
     }
 }
