@@ -6,8 +6,6 @@ package com.madhusudhan.jh.jpa;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 /**
  *

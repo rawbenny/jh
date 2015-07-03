@@ -5,8 +5,11 @@
 package com.madhusudhan.jh.jpa;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 /**
  *
@@ -16,7 +19,9 @@ import javax.persistence.Table;
 @Table(name="JPA_INSTRUMENT")
 public class Instrument {
     @Id
-    private long id = 0;
+    @GeneratedValue (strategy= GenerationType.TABLE, generator="empTableGen")
+    @TableGenerator(name = "empTableGen", table = "EMP_ID_TABLE")
+    private long id;
     private String issue = null;
 
     public long getId() {
