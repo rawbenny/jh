@@ -12,6 +12,6 @@
     </class>
     
     <query name="GET_TRAVEL_REVIEWS"><![CDATA[ from TravelReview ]]></query>
-    <query name="GET_TRAVEL_REVIEWS_FOR_TITLE"><![CDATA[ from TravelReview where id=:title ]]></query
+    <query name="GET_TRAVEL_REVIEWS_FOR_TITLE"><![CDATA[ from TravelReview where id=:title ]]></query>
 
 </hibernate-mapping>
