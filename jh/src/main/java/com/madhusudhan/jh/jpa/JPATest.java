@@ -17,7 +17,7 @@ public class JPATest {
     private EntityManagerFactory factory = null;
     private EntityManager manager = null;
     private void init() {
-        factory = Persistence.createEntityManagerFactory("instrument");
+        factory = Persistence.createEntityManagerFactory("trading-entities");
         manager = factory.createEntityManager();
         System.out.println("Manager created: "+manager);
     }
